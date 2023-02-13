@@ -1,0 +1,33 @@
+<html>
+<head><title>shanmugaraj</title>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  
+
+
+
+
+<script>
+   const canvas=document.getElementById("canvas")
+   const ctx=canvas.getContext("2d")
+   let isdrawing=false
+   canvas.width=window.innerWidth
+   canvas.height=window.innerHeight
+   canvas.addEventListener("mousedown",()=>{
+		    isdrawing=true
+			ctx.beginPath()
+			ctx.stroke()
+			ctx.lineWidth=10
+			})
+			canvas.addEventListener("mousemove",(event)=>{
+			 if(!isdrawing)return
+			ctx.lineTo(event.offsetX,event.offsetY)
+			ctx.stroke()
+			})
+			canvas.addEventListener("mouseup",()=>isdrawing=false)<!-----it is the single line function--->
+		
+</script>
+
+</body>
+</html>
